@@ -10,11 +10,7 @@ This application is built for users to review meals and has a few requirements:
 Clone the repository:
 
 ```
-<<<<<<< 20b21fac6fa7e14af354ad07718e508fafa637c4
-git clone https://github.com/jd-gray/vue-js-rails.git
-=======
 git clone https://github.com/jd-gray/review_app.git
->>>>>>> Update readme, include license, contributing, and code of conduct
 ```
 
 Create and migrate your database:
@@ -27,10 +23,6 @@ Run your local rails and webpacker server in seperate tabs:
 
 ```
 rails s
-<<<<<<< 20b21fac6fa7e14af354ad07718e508fafa637c4
-./bin/webpack-dev-server
-=======
->>>>>>> Update readme, include license, contributing, and code of conduct
 ```
 
 ## License
