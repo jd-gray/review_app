@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/stympy/faker
+  revision: f77699480a1b3fce6ecba75dca82d216657f9ef0
+  specs:
+    faker (1.8.7)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,6 +82,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    database_cleaner (1.7.0)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -88,8 +96,6 @@ GEM
     factory_bot_rails (4.10.0)
       factory_bot (~> 4.10.0)
       railties (>= 3.0.0)
-    faker (1.8.7)
-      i18n (>= 0.7)
     ffi (1.9.24)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -225,9 +231,10 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  database_cleaner
   devise (~> 4.4, >= 4.4.3)
   factory_bot_rails
-  faker
+  faker!
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)

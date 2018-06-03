@@ -1,10 +1,16 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'database_cleaner'
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+  include FactoryBot::Syntax::Methods
+  
+  ActiveRecord::Migration.check_pending!
 
-  # Add more helper methods to be used by all tests here...
+  DatabaseCleaner.strategy = :truncation
+  DatabaseCleaner.logger = Rails.logger
+
+  setup { DatabaseCleaner.start }
+  teardown { DatabaseCleaner.clean }
 end

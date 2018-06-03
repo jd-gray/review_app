@@ -18,7 +18,7 @@ group :development, :test do
   gem 'pry', '~> 0.11.3'
   gem 'pry-rails', '~> 0.3.6'
   gem 'pry-byebug', '~> 3.6'
-  gem 'faker'
+  gem 'faker', git: 'https://github.com/stympy/faker'
   gem 'factory_bot_rails'
 end
 
@@ -33,6 +33,7 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

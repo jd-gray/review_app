@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :meal do
-    title "MyString"
-    description "MyText"
-    total_rating 1
+    title  { Faker::Food.dish }
+    description { Faker::Food.description }
   end
 end
