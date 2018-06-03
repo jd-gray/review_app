@@ -15,7 +15,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.4', '>= 4.4.3'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry', '~> 0.11.3'
+  gem 'pry-rails', '~> 0.3.6'
+  gem 'pry-byebug', '~> 3.6'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do
