@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
  	has_many :reviews, dependent: :destroy
+
+  ROLES = %w(admin).freeze
+
+  def admin?
+    role == 'admin'
+  end
 end

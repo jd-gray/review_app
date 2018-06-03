@@ -15,10 +15,10 @@ Clone the repository:
 git clone https://github.com/jd-gray/review_app.git
 ```
 
-Create and migrate your database:
+Create, migrate, and seed your database:
 
 ``` 
-rails db:create db:migrate
+rails db:setup
 ```
 
 Run test tests:
