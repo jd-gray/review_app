@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/projects/eaf43b34-367b-43c3-a7ad-83b36e556a83/2005923/badge.svg)](https://semaphoreci.com/jd-gray-projects/review_app)
+
 # Meal Reviewer
 
 This application is built for users to review meals and has a few requirements:
@@ -19,7 +21,12 @@ Create and migrate your database:
 rails db:create db:migrate
 ```
 
-Run your local rails and webpacker server in seperate tabs:
+Run test tests:
+```
+rails test
+```
+
+Run your local rails server:
 
 ```
 rails s
