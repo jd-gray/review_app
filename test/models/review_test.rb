@@ -11,6 +11,11 @@ class ReviewTest < ActiveSupport::TestCase
     assert review.valid?
   end
 
+  test "review without liked" do
+    review = Review.new(liked: nil, comment: nil, meal: @meal, user: @user)
+    assert review.invalid?
+  end
+
   test "review without user" do
     review = Review.new(liked: true, comment: nil, meal: @meal, user: nil)
     refute review.valid?

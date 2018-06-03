@@ -4,6 +4,7 @@ class Review < ApplicationRecord
 
   after_save :update_meal_rating_count
 
+  validates :liked, inclusion: { in: [ true, false ] }
   validates :comment, presence: true, if: -> { !liked }
   validates :meal_id, uniqueness: { scope: :user_id, message: 'You have already rated this meal' }
 
