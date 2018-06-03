@@ -39,24 +39,24 @@ class ReviewTest < ActiveSupport::TestCase
   test "positive review updates total rating for meal" do
     review = Review.create!(liked: true, comment: nil, meal: @meal, user: @user)
 
-    assert_equal 1, @meal.total_rating
+    assert_equal 1, @meal.reload.total_rating
   end
 
   test "negative review updates total rating for meal" do
     review = Review.create!(liked: false, comment: 'Food is bad', meal: @meal, user: @user)
 
-    assert_equal -1, @meal.total_rating
+    assert_equal -1, @meal.reload.total_rating
   end
 
   test "multiple reviews update total rating for meal" do
     review1 = Review.create!(liked: true, comment: nil, meal: @meal, user: create(:user))
-    assert_equal 1, @meal.total_rating
+    assert_equal 1, @meal.reload.total_rating
 
     review2 = Review.create!(liked: true, comment: nil, meal: @meal, user: create(:user))
-    assert_equal 2, @meal.total_rating
+    assert_equal 2, @meal.reload.total_rating
 
     review3 = Review.create!(liked: false, comment: 'Food is bad', meal: @meal, user: create(:user))
-    assert_equal 1, @meal.total_rating
+    assert_equal 1, @meal.reload.total_rating
   end
 
   test "user can only review once per review" do
