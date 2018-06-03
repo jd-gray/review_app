@@ -53,4 +53,15 @@ class ReviewTest < ActiveSupport::TestCase
     review3 = Review.create!(liked: false, comment: 'Food is bad', meal: @meal, user: create(:user))
     assert_equal 1, @meal.total_rating
   end
+
+  test "user can only review once per review" do
+    review = Review.create!(liked: true, comment: nil, meal: @meal, user: @user)
+    assert review.valid?
+
+    exception = assert_raise(ActiveRecord::RecordInvalid) do
+      Review.create!(liked: false, comment: 'Food is bad', meal: @meal, user: @user)  
+    end
+    assert_equal 'Validation failed: Meal You have already rated this meal', exception.message
+    assert_equal 1, Review.all.size
+  end
 end
