@@ -12,9 +12,14 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'devise', '~> 4.4', '>= 4.4.3'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry', '~> 0.11.3'
+  gem 'pry-rails', '~> 0.3.6'
+  gem 'pry-byebug', '~> 3.6'
+  gem 'faker', git: 'https://github.com/stympy/faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -28,6 +33,7 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
