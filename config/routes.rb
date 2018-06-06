@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  resources :meals, only: [:index, :show] do
+    resources :reviews, only: [:create, :update]
+  end
+  
   namespace :admin do
-      resources :users
-      resources :meals
-      resources :reviews
+    resources :users
+    resources :meals
+    resources :reviews
 
-      root to: "users#index"
-    end
+    root to: "users#index"
+  end
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

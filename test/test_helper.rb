@@ -5,6 +5,7 @@ require 'database_cleaner'
 
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
+  include Devise::Test::IntegrationHelpers
   
   ActiveRecord::Migration.check_pending!
 

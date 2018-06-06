@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
-	belongs_to :user
-	belongs_to :meal
+  belongs_to :user
+  belongs_to :meal
 
   after_save :update_meal_rating_count
 
