@@ -1,7 +1,10 @@
 class MealsController < ApplicationController
   def index
     @meals = Meal.all
-    render json: @meals, status: :ok
+    respond_to do |format|
+      format.html
+      format.json { render json: @meals }
+    end
   end
 
   def show

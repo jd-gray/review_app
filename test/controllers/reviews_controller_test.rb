@@ -10,7 +10,7 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
 
   test "creates review" do
     assert_difference('Review.count') do
-      post meal_reviews_url(@meal), params: { review: { liked: true } }
+      post meal_reviews_url(@meal), as: :json, params: { review: { liked: true } }
     end
 
     assert_response :success
@@ -20,10 +20,10 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
     review = create(:review, user: @user, meal: @meal)
 
     assert_no_difference('Review.count') do
-      post meal_reviews_url(@meal), params: { review: { liked: false, comment: 'Foo bar' } }
+      post meal_reviews_url(@meal), as: :json, params: { review: { liked: false, comment: 'Foo bar' } }
     end
 
-    assert_response :success
+    assert_response :unprocessable_entity
   end
 
   test "updates review" do

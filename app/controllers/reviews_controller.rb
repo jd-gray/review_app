@@ -6,8 +6,14 @@ class ReviewsController < ApplicationController
     review = @meal.reviews.build(review_params)
     review.user_id = current_user.id
 
-    if review.save
-      render json: review, status: :ok
+    respond_to do |format|
+      format.json do
+        if review.save
+          render json: { review: review, total_rating: review.meal.total_rating }, status: :ok
+        else
+          render json: { errors: review.errors.messages }, status: 422
+        end
+      end
     end
   end
 
