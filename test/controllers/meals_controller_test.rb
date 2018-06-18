@@ -8,7 +8,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get meals_url
+    get meals_url, as: :json
     assert_response :success
   end
 
