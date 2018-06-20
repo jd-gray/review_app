@@ -18,6 +18,7 @@ gem 'webpacker', '~> 3.5', '>= 3.5.3'
 gem 'administrate'
 gem 'cancancan'
 gem 'foreman'
+gem 'validates_timeliness', '~> 4.0', '>= 4.0.2'
 
 group :development, :test do
   gem 'pry', '~> 0.11.3'
